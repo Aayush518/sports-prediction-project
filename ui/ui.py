@@ -1,5 +1,4 @@
-import sys
-sys.path.append('C:\Users\adhik\Downloads\sports-prediction-project\sports-prediction-project')
+
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from model.data_preprocessing import preprocess_data

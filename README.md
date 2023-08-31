@@ -1,78 +1,90 @@
 
-# Sports Game Outcome Prediction
 
-This project demonstrates a simple sports game outcome prediction using machine learning. It predicts the outcome of sports games (e.g., basketball) based on historical game data.
+# Sports Game Outcome Prediction 🏀⚽🏈
+
+![Project Banner](./images/banner.png)
 
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Dependencies](#dependencies)
-
+  - [Tkinter App](#tkinter-app)
+  - [Streamlit App](#streamlit-app)
+- [Sample Output](#sample-output)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Introduction
 
-This project uses historical sports game data to predict the outcome of games. It leverages a machine learning model trained on features such as team statistics, player performance, and game conditions.
+Predict the outcome of sports games using machine learning! This project uses a RandomForestClassifier to predict game outcomes based on various features like team performance, venue, and more. The project includes both a Tkinter-based GUI and a Streamlit web app for easy use.
+
+## Features
+
+- 📊 Data Preprocessing
+- 🤖 Machine Learning Model Training
+- 🖥️ Tkinter-based GUI
+- 🌐 Streamlit Web App
+- 📈 Data Visualization
 
 ## Installation
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/Aayush518/sports-prediction-project.git
-   cd sports-prediction-project
-   ```
+Clone the repository:
 
-2. Create a virtual environment (recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+```bash
+git clone https://github.com/Aayush518/sports-prediction-project.git
+```
 
-3. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
+Navigate to the project directory:
+
+```bash
+cd sports-prediction-project
+```
+
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
 
-1. Place your sports game dataset (e.g., `sports_data.csv`) in the `data/` directory.
+### Tkinter App
 
-2. Run the user interface:
-   ```
-   python ui/ui.py
-   ```
+Run the Tkinter app:
 
-3. Use the UI to browse and select your dataset. The UI will display the accuracy of the game outcome predictions.
-
-## Folder Structure
-
-The project follows the following folder structure:
-
-```
-sports-prediction-project/
-│
-├── data/
-│   ├── sports_data.csv  # Your dataset
-│
-├── model/
-│   ├── __init__.py
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│
-├── ui/
-│   ├── __init__.py
-│   ├── ui.py
-│
-├── requirements.txt
-│
-└── README.md
+```bash
+python ui.py
 ```
 
-## Dependencies
+Follow the on-screen instructions to upload a CSV file and get predictions.
 
-- scikit-learn==0.24.2
-- pandas==1.3.3
-- numpy==1.21.2
-- tk==0.1.0
+### Streamlit App
+
+Run the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+Open the provided URL in your web browser and follow the instructions to upload a CSV file and get predictions.
+
+## Sample Output
+
+![Tkinter App](./images/tkinter_app.png)
+
+_Tkinter App_
+
+![Streamlit App](./images/streamlit_app.png)
+
+_Streamlit App_
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](./LICENSE)
+

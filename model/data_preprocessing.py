@@ -3,9 +3,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from scipy import stats
 from imblearn.over_sampling import SMOTE
+import numpy as np
 
-def preprocess_data(file_path):
-    data = pd.read_csv(file_path)
+def preprocess_data(data):
     data = data.dropna()
 
     # Remove outliers using Z-score
@@ -14,10 +14,19 @@ def preprocess_data(file_path):
     filtered_entries = (abs_z_scores < 3).all(axis=1)
     data = data[filtered_entries]
 
-    # ... (rest of the code remains the same)
+    # Label Encoding and Feature Scaling
+    label_encoder = LabelEncoder()
+    data['Outcome'] = label_encoder.fit_transform(data['Outcome'])
+    scaler = StandardScaler()
+    data[['Feature1', 'Feature2']] = scaler.fit_transform(data[['Feature1', 'Feature2']])
 
     # Handle imbalanced classes using SMOTE
+    X = data.drop('Outcome', axis=1)
+    y = data['Outcome']
     smote = SMOTE(random_state=42)
-    X_train, y_train = smote.fit_resample(X_train, y_train)
+    X, y = smote.fit_resample(X, y)
+
+    # Split the data
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     return X_train, X_test, y_train, y_test

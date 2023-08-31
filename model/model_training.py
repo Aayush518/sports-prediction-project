@@ -15,24 +15,7 @@ def train_model(X_train, y_train):
 
     return best_model
 
-# ... (rest of the code remains the same)
-
 def evaluate_model(model, X_test, y_test):
-    """
-    Evaluate the accuracy of a trained model.
-
-    Args:
-        model (RandomForestClassifier): Trained model.
-        X_test (DataFrame): Features of the testing data.
-        y_test (Series): Target labels of the testing data.
-
-    Returns:
-        float: Accuracy of the model on the testing data.
-    """
-    # Predict the target labels using the model
     y_pred = model.predict(X_test)
-
-    # Calculate the accuracy of the model
     accuracy = accuracy_score(y_test, y_pred)
-
     return accuracy
